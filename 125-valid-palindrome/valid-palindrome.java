@@ -21,11 +21,6 @@ while (start < end && !Character.isLetterOrDigit(s.charAt(end))) {
 }
             
             if(start<end){
-            //     sb1.append(Character.toLowerCase(s.charAt(start)));
-            //     sb2.append(Character.toLowerCase(s.charAt(end)));
-            //      if(!(sb1.toString().equals(sb2.toString()))){
-            //     return false;
-            // }
 
             if(Character.toLowerCase(s.charAt(start))!=(Character.toLowerCase(s.charAt(end)))){
                 return false;
