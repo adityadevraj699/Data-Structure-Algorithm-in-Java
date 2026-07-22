@@ -12,14 +12,14 @@ class Solution {
         while(start<end){
             
 
-            while(start<end && ((!Character.isLetterOrDigit(s.charAt(start))) || (!Character.isLetterOrDigit(s.charAt(end))))){
-                if(!Character.isLetterOrDigit(s.charAt(start))){
-                start++;
-            }
-            if(!Character.isLetterOrDigit(s.charAt(end))){
-                end--;
-            }
-            }
+            while (start < end && !Character.isLetterOrDigit(s.charAt(start))) {
+    start++;
+}
+
+while (start < end && !Character.isLetterOrDigit(s.charAt(end))) {
+    end--;
+}
+            
             if(start<end){
             //     sb1.append(Character.toLowerCase(s.charAt(start)));
             //     sb2.append(Character.toLowerCase(s.charAt(end)));
