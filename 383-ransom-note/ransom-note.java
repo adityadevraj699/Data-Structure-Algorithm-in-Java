@@ -1,5 +1,8 @@
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
+
+        if (magazine.length() < ransomNote.length()) return false;
+
        List<Character> list = new ArrayList<>();
        for(char ch : magazine.toCharArray()){
         list.add(ch);
