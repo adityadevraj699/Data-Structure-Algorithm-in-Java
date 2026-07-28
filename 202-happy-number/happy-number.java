@@ -2,7 +2,7 @@ class Solution {
     public boolean isHappy(int n) {
         HashSet<Integer> num = new HashSet<>();
 
-        while(n>0){
+        while(n != 1 && n != 4){
             num.add(n);
             n = sumsq(n);
             if(n ==1) return true;
@@ -10,7 +10,7 @@ class Solution {
             
         }
 
-        return false;
+       return n==1 ? true : false;
         
     }
 
