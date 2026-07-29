@@ -1,34 +1,24 @@
 class Solution {
     public List<String> summaryRanges(int[] nums) {
-        List<String> list = new ArrayList<>();
+        List<String> numarr= new ArrayList<>();
+        int i=0;
+        while(i<nums.length){
+            int start=nums[i];
+            int j=i;
 
-        if (nums.length == 0)
-            return list;
-        int start = nums[0], end=nums[0];
-    
-
-
-        for(int i=1;i<nums.length;i++){
-           if(nums[i] == end+1){
-            end = nums[i];
-           }
-           else {
-            if (start == end) {
-                list.add(String.valueOf(start));
-            } else {
-                list.add(start + "->" + end);
+            while(j+1<nums.length && nums[j+1]==nums[j]+1){
+                j++;
             }
-            start=nums[i];
-            end = nums[i];
-           }
+            if(nums[j]==nums[i]){
+                numarr.add(String.valueOf(start));
+            }else{
+              StringBuilder sb=new StringBuilder();
+              sb.append(start).append("->").append(nums[j]);
+              numarr.add(sb.toString());
+            }
+            
+            i=j+1;
         }
-
-         if (start == end) {
-                list.add(String.valueOf(start));
-            } else {
-                list.add(start + "->" + end);
-            }
-
-        return list;
+        return numarr;
     }
 }
